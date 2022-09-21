@@ -1,4 +1,8 @@
-import "./main.scss";
+// import "./main.scss";
+// import "../lesson-2/classwork-2/index"
+// import "../lesson-2/classwork-3/index"
+import "../lesson-2/ANKETA/index"
+
 // console.error('Test');
 // const t = 'sdfjmsd';
 
@@ -28,14 +32,14 @@ import "./main.scss";
 //     console.log(i);
 // }
 
-let result1 = ''
+// let result1 = ''
 
-for (let i = 0; i <= 8; i++) {
-    if (i % 2 == 0) {
-        result1 += '#';
-    } else {
-        result1 += ' ';
-    }
-}
+// for (let i = 0; i <= 8; i++) {
+//     if (i % 2 == 0) {
+//         result1 += '#';
+//     } else {
+//         result1 += ' ';
+//     }
+// }
 
-console.log(result1);
+// console.log(result1);
