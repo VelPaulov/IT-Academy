@@ -1,151 +1,55 @@
-// import "./main.scss";
-// import "../lesson-2/classwork-2/index"
-// import "../lesson-2/classwork-3/index"
-// import "../lesson-2/ANKETA/index"
-
-// console.error('Test');
-// const t = 'sdfjmsd';
-
-// const noWroteLetters = 5; const unreadMessages;
-// const isRegisterUser = true; isRegistered
-// const favoriteGenres = ["drama", "comedy", "triller",];
-
-// for (let i = 1; i <= 10; i++) {
-//     console.log(i);
+// Recursion:
+// let sumTo = (n) => {
+//     if(n === 1) return 1;
+//     return n + sumTo(n - 1);
 // }
-
-// let i = 0;
-
-// while (i <= 10) {
-//     console.log(i);
-//     i++;
-// }
-
-// let j = 0;
-
-// do {
-//     j++;
-//     console.log(j);
-// } while (j <= 10);
-
-// for (let i = '#'; i.length <= 7; i += "#") {
-//     console.log(i);
-// }
-
-// const input = prompt('Enter currency:');
-
-// const currency = {
-//     usd: 'dollar',
-//     eur: 'euro',
-//     blr: 'bel rouble',
-//     rus: 'russian rouble',
-//     zlt: 'poland zloty',
-
-// }
-
-// currency.lat = 'latvian lat';
-// currency['grv'] = 'ukrainian grivna';
-
-// alert(currency[input]);
-
-// let descriptor = Object.defineProperty(statusUser, 'online', {
-//     value: 'sdfsdf',
-//     wriable: false,
-//     enumerable: false,
-//     configurable: false,
-// })
-
-// descriptor.online = ' dsfsdfsdf';
-// console.log(descriptor);
-
-// let user = {
-//     name: 'Valery',
-//     age: 27,
-//     isMarried: true,
-//     anyKids: null,
-// }
-
-// Object.defineProperty(user, 'name', {
-//     writable: false,
-//     enumerate: false,
-//     configurable: false,
-// });
-
-// user.name = 'Pavel';
-
-// console.log(user);
-// console.log(user.name);
-
-// let salaries = {
-//     John: 100,
-//     Ann: 160,
-//     Pete: 130,
-// }
-
-// let sum = 0;
-
-// for (const key in salaries) {
-//     sum += salaries[key];
-// }
-
-// alert(sum);
-
-// function calcSum(a, b) {
-//     return a + b;
-// }
-
-// let result = calcSum(2, 3);
-
+// let result = sumTo(7);
 // console.log(result);
 
-// function sayHi() {
-//     for (const arg of arguments) {
-//         console.log(arg);
-//     }
+// let sum = 7;
+// let result = 0;
+// for (let i = sum; i !== 0; i--) {
+//     result += i;
 // }
-
-// sayHi('123', '123123', 112321312, 'asdasd', {name: 'hello'});
-
-
-// function sayHi(...params) {
-//     for (const arg of params) {
-//         console.log(arg);
-//     }
-// }
-
-// const obj1 = {
-//     name: 'sdfsdf',
-// };
-
-// const obj2 = {
-//     fullName: 'sdfdsfds',
-//     ...obj1,
-// };
-
-// console.log(obj2);
-
-// const sayHello2 = (a, b) => a + b;
-
-// let getAny = (...some) => {
-//     let sum = 0;
-//     for (const arg of some) {
-//         sum += arg;
-//     }
-//     return sum;
-// };
-
-// let result = getAny(1, 2, 3, 7, 5);
-
 // console.log(result);
 
-// const min = (a, b) => a < b ? a : b;
-
-// const isPalindrom = (text) => {
-//     let text2 = '';
-//     for(let i = text.length - 1; i >= 0; i--) {
-//         text2 += text[i];
+// Closure:
+// let calcSum = (a) => {
+//     return (b) => {
+//         return a + b;
 //     }
-//     return text2 === text;
+// }
+// console.log(calcSum(4)(7));
+
+// Recursion-for-thinks:
+// const list = {
+//     a: 'a',
+//     b: 'b',
+//     next: {
+//         a: 'a-1',
+//         b: 'b-1',
+//         next: {
+//             a: 'a-2',
+//             b: 'b-2',
+//             next: null, 
+//         }
+//     }
 // }
 
-// console.log(isPalindrom('шалаш'));
+// const printA = (list) => {
+//     list.a = Math.random();
+//     if (list.next) return printA(list.next);
+//     return;
+// }
+
+// printA(list);
+// console.log(list);
+
+// const string = 'aaa bbb ccc';
+// const halfString = string.indexOf('bbb');
+
+
+// console.log(string.slice(halfString, halfString + 3));
+// console.log(string.substring(halfString, 7));
+// console.log(string.substr(halfString, 3));
+
