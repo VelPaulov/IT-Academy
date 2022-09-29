@@ -1,3 +1,4 @@
+import "../lesson-4/TREESUM/index.js"
 // Recursion:
 // let sumTo = (n) => {
 //     if(n === 1) return 1;
