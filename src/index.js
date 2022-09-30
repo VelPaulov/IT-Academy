@@ -1,29 +1,4 @@
-import "../lesson-4/TREESUM/index.js"
-// Recursion:
-// let sumTo = (n) => {
-//     if(n === 1) return 1;
-//     return n + sumTo(n - 1);
-// }
-// let result = sumTo(7);
-// console.log(result);
 
-// let sum = 7;
-// let result = 0;
-// for (let i = sum; i !== 0; i--) {
-//     result += i;
-// }
-// console.log(result);
-
-// Closure:
-// let calcSum = (a) => {
-//     return (b) => {
-//         return a + b;
-//     }
-// }
-// console.log(calcSum(4)(7));
-
-// Recursion-for-thinks:
-// const list = {
 //     a: 'a',
 //     b: 'b',
 //     next: {
@@ -54,3 +29,84 @@ import "../lesson-4/TREESUM/index.js"
 // console.log(string.substring(halfString, 7));
 // console.log(string.substr(halfString, 3));
 
+// Methods of array:
+// sort(); => sortArray (default: String)
+// splice(start, deleteCount, item1, item2 ... itemN,); => spliceArray
+// indexOf(el); => index
+// lastIndexOf(el) => index on the right
+// includes(el); => boolean
+// find((item, index, array) => {}); => item
+// findIndex((item, index, array) => {}); => index
+// arr1.concat(arr2); => new concat array
+// const arr = [...arr1, ...arr2]; => new concat array
+// join(''); => str from array with '' between items
+
+// forEach():
+
+// let array = [2, 3, 4, 5, 6];
+// forEach(array, (item, index, array) => {
+//     console.log(item);
+// })
+
+//map():
+// const res = commentList.map((item, index, array) => {
+//     return {
+//         id: item.id
+//     };
+// })
+
+// filter();
+// reduce(): 
+// const res = array.reduce((acc, item, index, array) => {
+//     return acc += item;
+// }, default)
+
+//some((callback => true)) => true
+//every((callback => false)) => false
+
+// Array.from();
+// Array.isArray();
+
+// sort - reverse - splice
+
+// #1:
+// let arr1 = [2, 3, 4, undefined, null, "", false, 5, 6];
+
+// let compact = (array) => {
+//     return array.filter((item, index, array) => item);
+// }
+
+// console.log(compact(arr1));
+
+
+// #2:
+// let array = [1, 2, 3, 4, 5];
+
+// let sumInput = (arr) => {
+    //     const res = arr.reduce((acc, item) => acc += item, 0);
+    //     return res;
+    // }
+    
+    // console.log(sumInput(array));
+    
+// #4:
+    
+// let array = [1, 2, 3, 4, 5];
+
+// let func = (arr) => arr.reverse();
+
+// console.log(func(array));
+
+// #5:
+// const filter = (callback(item) => array[item]) => {
+//     if (array[item]) {
+//         true;
+//     }
+// }
+
+// #6: 
+const forEach = (array, callback) => {
+    for (let i = 0; i < array.length; i++) {
+        callback(array[i], i, array) {}
+    }
+};
