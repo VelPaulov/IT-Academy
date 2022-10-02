@@ -1,4 +1,4 @@
-// import "../lesson-5/homework-10/index.js"
+// import "../lesson-5/homework-8/index.js"
 //     a: 'a',
 //     b: 'b',
 //     next: {
