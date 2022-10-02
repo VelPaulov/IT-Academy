@@ -1,4 +1,4 @@
-
+// import "../lesson-5/homework-10/index.js"
 //     a: 'a',
 //     b: 'b',
 //     next: {
@@ -105,8 +105,8 @@
 // }
 
 // #6: 
-const forEach = (array, callback) => {
-    for (let i = 0; i < array.length; i++) {
-        callback(array[i], i, array) {}
-    }
-};
+// const forEach = (array, callback) => {
+//     for (let i = 0; i < array.length; i++) {
+//         callback(array[i], i, array) {}
+//     }
+// };
