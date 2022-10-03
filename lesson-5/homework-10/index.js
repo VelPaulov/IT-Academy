@@ -13,12 +13,9 @@ const litmir = [
     },
 ];
 
-const propertyValue = (array, key) => {
-    let res = array.map((item) => {
-        return item[key];
-    });
-    return res.join(', ');
-}
+const propertyValue = (array, key) => array
+    .map((item) => item[key])
+    .join(', ');
 
 const result1 = propertyValue(litmir, 'title');
 console.log(result1);

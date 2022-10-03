@@ -1,9 +1,6 @@
 const vegetables = ['Капуста', 'Репа', 'Редиска', 'Морковка'];
 
-const arrayClone = (arr) => {
-    const newArr = [];
-    return newArr.concat(arr);
-}
+const arrayClone = (arr) => [...arr]
 
 const arr1 = arrayClone(vegetables);
 
