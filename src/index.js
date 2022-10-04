@@ -1,112 +1,92 @@
-// import "../lesson-5/homework-8/index.js"
-//     a: 'a',
-//     b: 'b',
-//     next: {
-//         a: 'a-1',
-//         b: 'b-1',
-//         next: {
-//             a: 'a-2',
-//             b: 'b-2',
-//             next: null, 
-//         }
-//     }
-// }
 
-// const printA = (list) => {
-//     list.a = Math.random();
-//     if (list.next) return printA(list.next);
-//     return;
-// }
+// const fridge = ['Butter', 'Bread', 'Oil', 'Tomato', 'Apple', 'Cucumber', 'Sausage', 'Cheese'];
+// const recipe = ['Bread', 'Butter', 'Tomato', 'Sausage', 'Cheese'];
 
-// printA(list);
-// console.log(list);
+// const sandwich = fridge.filter((item) => recipe.includes(item))
+//     .map((_, __, array) => array[Math.ceil(Math.random() * array.length - 1)])
+//     .reduce((plate, item) => plate + item + ' ', '');
 
-// const string = 'aaa bbb ccc';
-// const halfString = string.indexOf('bbb');
+//     console.log(sandwich);
 
+// const user = {
+//     name: 'Name',
+//     age: 29,
+//     job: 'engineer',
+// //     [Symbol.iterator]() {
+// //         return {
+// //             counter: 0,
+// //             next() {
+// //                 if(this.counter !== 5) {
+// //                     return {
+// //                         done: false,
+// //                         value: this.counter++
+// //                     }
+// //                 }
+// //                 return {
+// //                     done: true
+// //                 }
+// //             }
+// //         }    
+// //     }
 
-// console.log(string.slice(halfString, halfString + 3));
-// console.log(string.substring(halfString, 7));
-// console.log(string.substr(halfString, 3));
-
-// Methods of array:
-// sort(); => sortArray (default: String)
-// splice(start, deleteCount, item1, item2 ... itemN,); => spliceArray
-// indexOf(el); => index
-// lastIndexOf(el) => index on the right
-// includes(el); => boolean
-// find((item, index, array) => {}); => item
-// findIndex((item, index, array) => {}); => index
-// arr1.concat(arr2); => new concat array
-// const arr = [...arr1, ...arr2]; => new concat array
-// join(''); => str from array with '' between items
-
-// forEach():
-
-// let array = [2, 3, 4, 5, 6];
-// forEach(array, (item, index, array) => {
-//     console.log(item);
-// })
-
-//map():
-// const res = commentList.map((item, index, array) => {
-//     return {
-//         id: item.id
-//     };
-// })
-
-// filter();
-// reduce(): 
-// const res = array.reduce((acc, item, index, array) => {
-//     return acc += item;
-// }, default)
-
-//some((callback => true)) => true
-//every((callback => false)) => false
-
-// Array.from();
-// Array.isArray();
-
-// sort - reverse - splice
-
-// #1:
-// let arr1 = [2, 3, 4, undefined, null, "", false, 5, 6];
-
-// let compact = (array) => {
-//     return array.filter((item, index, array) => item);
-// }
-
-// console.log(compact(arr1));
-
-
-// #2:
-// let array = [1, 2, 3, 4, 5];
-
-// let sumInput = (arr) => {
-    //     const res = arr.reduce((acc, item) => acc += item, 0);
-    //     return res;
-    // }
-    
-    // console.log(sumInput(array));
-    
-// #4:
-    
-// let array = [1, 2, 3, 4, 5];
-
-// let func = (arr) => arr.reverse();
-
-// console.log(func(array));
-
-// #5:
-// const filter = (callback(item) => array[item]) => {
-//     if (array[item]) {
-//         true;
-//     }
-// }
-
-// #6: 
-// const forEach = (array, callback) => {
-//     for (let i = 0; i < array.length; i++) {
-//         callback(array[i], i, array) {}
-//     }
 // };
+
+// console.log(Object.values(user));
+
+// Generator:
+// function test1() {
+//     yield 0;
+//     yield 1;
+//     yield 2;
+//     yield 3;
+//     yield 4;
+//     yield 5;
+// }
+
+// function generateSequence(start, end) {
+//     for (let i = start; i <= end; i++) {
+//         yield i;
+//     }
+// }
+
+// const array = [...generate(0, 10)];
+
+// function generatePasswordCodes() {
+//     yield generatePasswordCodes(10, 99);
+// }
+
+// generateSequence:
+// String.forCharCode(code);
+
+// JSON:
+// '{
+//     "id": ""/5/[]
+// }'
+
+// try/catch:
+// const makeRequest = axios () => {
+// try {
+//     const response = awayt axios();
+// }   catch (error) {
+//     console.log(error);
+// }   finally {
+//     console.log('finally')
+// }
+// };
+
+//regularExp
+// const regExp1 = /hello/ig;
+// // const regExp2 = new RegExp('template');
+
+// // console.log('Hello'.match(regExp1));
+// console.log(regExp1.test('asdasd hello'));
+
+// regex (site):
+//\d num
+//\s space
+//\w words
+// \. dots
+// ^.* start
+// ^.+
+// ^.{1,2}
+// $ end
