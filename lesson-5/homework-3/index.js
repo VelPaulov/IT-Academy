@@ -4,7 +4,7 @@ const colonOdd = (number) => {
     return number
         .split("")
         .map((item, index, array) => {
-            const condition = [item, array[index+1]].every(
+            const condition = [item, array[index + 1]].every(
                 (item) => item % 2 !== 0
             );
             if (condition && !(index === array.length - 1)) {
