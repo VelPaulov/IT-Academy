@@ -1,135 +1,3 @@
-
-// const fridge = ['Butter', 'Bread', 'Oil', 'Tomato', 'Apple', 'Cucumber', 'Sausage', 'Cheese'];
-// const recipe = ['Bread', 'Butter', 'Tomato', 'Sausage', 'Cheese'];
-
-// const sandwich = fridge.filter((item) => recipe.includes(item))
-//     .map((_, __, array) => array[Math.ceil(Math.random() * array.length - 1)])
-//     .reduce((plate, item) => plate + item + ' ', '');
-
-//     console.log(sandwich);
-
-// const user = {
-//     name: 'Name',
-//     age: 29,
-//     job: 'engineer',
-// //     [Symbol.iterator]() {
-// //         return {
-// //             counter: 0,
-// //             next() {
-// //                 if(this.counter !== 5) {
-// //                     return {
-// //                         done: false,
-// //                         value: this.counter++
-// //                     }
-// //                 }
-// //                 return {
-// //                     done: true
-// //                 }
-// //             }
-// //         }    
-// //     }
-
-// };
-
-// console.log(Object.values(user));
-
-// Generator:
-// function test1() {
-//     yield 0;
-//     yield 1;
-//     yield 2;
-//     yield 3;
-//     yield 4;
-//     yield 5;
-// }
-
-// function generateSequence(start, end) {
-//     for (let i = start; i <= end; i++) {
-//         yield i;
-//     }
-// }
-
-// const array = [...generate(0, 10)];
-
-// function generatePasswordCodes() {
-//     yield generatePasswordCodes(10, 99);
-// }
-
-// generateSequence:
-// String.forCharCode(code);
-
-// JSON:
-// '{
-//     "id": ""/5/[]
-// }'
-
-// try/catch:
-// const makeRequest = axios () => {
-// try {
-//     const response = awayt axios();
-// }   catch (error) {
-//     console.log(error);
-// }   finally {
-//     console.log('finally')
-// }
-// };
-
-//regularExp
-// const regExp1 = /hello/ig;
-// const regExp2 = new RegExp('template');
-
-// console.log('Hello'.match(regExp1));
-// console.log(regExp1.test('asdasd hello'));
-
-// regex (site):
-// \d num
-// \s space
-// \w words
-// \. dots
-// ^.* start
-// ^.+
-// ^.{1,2}
-// $ end
-
-// Regular Exp:
-// const regExp1 = new RegExp('template', 'i');
-// const regExp2 = /template/i;
-
-// const str = 'Template';
-// console.log(str.match(regExp1));
-// console.log(str.match(regExp2));
-// console.log(regExp2.test(str));
-
-// https://regex101.com/
-
-// \. - dots
-// \d - numbers
-// \w - words
-// \s - space
-// \t - tabulation
-// \w+\. - some words and .
-// \w{1,2} - words from 1 to 2
-// gr[a|e]y - gr + a or e and y
-// gr[a-z]y - gr + alphavet and y
-// [0-9] - only numbers
-// ^asd - start string
-// asd$ - end string
-// <h[1-6]>[a-z0-9]+<\/h[1-6]> - search - h1-h6
-// .* - сколько угодно
-// https?:\/\/\w+.\w{2,3} - check valid addres (? - optional, {} - diapason)
-// \W - отрицание (большая буква)б (что угодно, кроме...)
-// \w+@\w+.\w+ - search site address
-
-// const str = `
-// <h1></h1>
-// <h2>sdfsd</h2>
-// <h3>edfsdf</h3>
-// <h4>sdfsdf</h4>
-// <h5>fgdf</h5>
-// <h6>sdfsdf</h6>
-// `;
-// console.log(str. replace(regExp2, '<div>'));
-
 // 1 Imperative programming
 
 // 2 Declarative programming
@@ -220,12 +88,135 @@
 
 // Polimorfism:
 
-// Abstraction:
 
-// [[Prototype]]:
+
+// Abstraction:
+// const button = document.createElement('button');
+// button.classList.add('button');
+// button.textContent = 'asdasdas';
+
+// class CreateElement {
+//     create(type, attributes, content) {
+//         const button = document.createElement(type);
+//         Object.entries(attributes).forEach(([key, value]) => {
+//             button.setAttribute(key, value);
+//         });
+//         button.textContent = content;
+
+//         return button;
+//     }
+// }
+
+// const div = CreateElement.create('div', 'Block', {class: 'container'});
+
 
 // Work with String.prototype:
 // String.prototype.reverse = function() {
 //     return this.split('').reverse().join('');
 // }
 // console.log('Test'.reverse());
+
+// Object.values();
+
+// class User {
+//     constructor() {
+//         this._name = 'name';
+//         this._lastName = 'last name';
+//         this._lastName = 'last name';
+//         User.counter += 1;
+//     }
+//     get name() {
+//         return this._name;
+//     }
+
+//     static counter = 0;
+
+//     set name(value) {
+//         if (value.length <= 5) {
+//             this._name  =value;
+//         } else {
+//             console.error('Cann not set property');
+//         }
+//     }
+
+//     static print() {
+//         console.log('asdasd');
+//     }
+// }
+
+// const user = new User();
+// user.name = 'name';
+
+// user.print();
+
+// console.log(User.counter);
+
+// Geters & Seters:
+// class User {
+//     constructor() {
+//         this._name = 'a';
+//     }
+//     set name(value) {
+//         if (value.includes('a')) {
+//             this._name = value;
+//         } else {
+//             console.log('Error');
+//         }
+//     }
+//     get name() {
+//         return this._name;
+//     }
+// }
+
+// const user1 = new User();
+// user1.name = 'sdfdsfd';
+// console.log(user1.name);
+
+// Destructurisation:
+// const array = [213, 129];
+// const [id, address] = arr;
+
+// console.log(Object.entries({name: 'Alex'}));
+
+
+// Global objects:
+
+// Date:
+// const data = new Date();
+
+// console.log(data);
+// console.log(data.getFullYear());
+// console.log(data.getDate());
+// console.log(data.getHours());
+
+// moment.js - библиотека, помогает работать с датами
+
+// Math:
+// console.log(Math.ceil(4.4)); сокращает вверх
+// console.log(Math.floor(4.4)); сокращает вниз
+// console.log(Math.round(4.4)); сокращает по математически
+// console.log(Math.max(4.4)); найти максимальное число
+// console.log(Math.min(4.4)); найти минимальное число
+
+// String
+// Number
+// Boolean
+
+// Set
+// const set = new Set([1,2,3,4,1,2,43,1,5,7]); 
+// console.log(set.values()); возвращает уникальные значения
+
+// WeakSet: то же что и Set, но работает с объектами
+// Map:
+// WeakMap:
+//
+
+// DOM:
+// getElementById - id
+// getElementsByClassName - class
+// getElementsByTagName - tag
+// getElementsByName - value of atribute 'name'
+// querySelector - selector in css
+// querySelectorAll - all elements of selector
+// closest - search clossest grandparent
+
