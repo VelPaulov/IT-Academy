@@ -220,3 +220,61 @@
 // querySelectorAll - all elements of selector
 // closest - search clossest grandparent
 
+// window.navigator
+// window.screen
+// window.location
+// window.fetch
+// window.history
+// localStorage
+// SessionStorage
+// Events
+// 
+// https://developer.mozilla.org/ru/docs/Web/Events
+
+// Add event listener:
+// const square = document.querySelector('.square');
+
+// square.addEventListener('click', () => {
+//     console.log('sdfdsf');
+// })
+
+// const clickhandler = () => console.log('sdfdsf');
+
+// square.addEventListener('click', clickhandler);
+
+// delete event listener:
+// square.removeEventListener('click', clickhandler);
+
+// Object event:
+// const clickhandler = (event) => {
+//     console.log(event.target);
+//     event.target.style.border = '1px solid green';
+// }
+
+// Stop propagation: останавливает всплытие событий
+// event.stopPropagation(); останавливает всплытие своих родительских элементов
+// event.stopImmediatePropagation(); останавливает событие сразу же после первого события останавливая последующие
+
+// capture: true
+
+// Делигирование:
+// плохой подход:
+// const links = document.querySelectorAll('a');
+// Array.from(links).forEach(() => {
+//     item.addEventListener('slick', (evt) => {
+//         evt.preventDefault();
+//         console.log(evt.target);
+//     })
+// })
+
+// Норм подход:
+// const ul = document.querySelectorAll('ul');
+// Array.from(ul).forEach(() => {
+//         item.addEventListener('slick', (evt) => {
+//             evt.preventDefault();
+//             const target = evt.target.closest();
+//             if (target) {
+//                 console.log('sdfs');
+//             }
+//         })
+//     })
