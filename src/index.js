@@ -1,3 +1,5 @@
+import '../classwork/search/SearchList.js';
+
 // 1 Imperative programming
 
 // 2 Declarative programming
@@ -260,7 +262,7 @@
 // Делигирование:
 // плохой подход:
 // const links = document.querySelectorAll('a');
-// Array.from(links).forEach(() => {
+// Array.from(links).forEach((item) => {
 //     item.addEventListener('slick', (evt) => {
 //         evt.preventDefault();
 //         console.log(evt.target);
@@ -278,3 +280,49 @@
 //             }
 //         })
 //     })
+
+// Cookie:
+// const ms = 10000;
+// document.cookie = `it-academy=password; path=/about; max-age=${ms}`;
+// console.log(document.cookie);
+
+// LocalStorage:
+// window.localStorage.setItem('it-academy', 'dsjaasdas');
+// console.log(window.localStorage.getItem('it-academy'));
+// window.localStorage.removeItem('it-academy');
+// window.localStorage.clear();
+
+// SessionStorage:
+// То же, что и локал, но живёт пока сессия не закончится
+
+// Web components:
+// class MyButton extends HTMLButtonElement {}
+// class Search extends HTMLElement {
+//     constructor() {
+//         super();
+//         this.content = this.getAttribute('content');
+//     }
+
+//     connectedCallback() {
+//         this.innerHTML = `
+//             <div>
+//                 <a href='#'>${this.content}</a>
+//             </div>
+//         `
+//     }
+
+//     disconnectedCallback() {
+
+//     }
+
+//     attributeChangedCallback(name, oldValue, newValue) {
+//         console.log(name, oldValue, newValue);
+//     }
+
+//     static get observedAttributes() {
+//         return ['content'];
+//     }
+// }
+
+// customElements.define('user-search', Search);
+
