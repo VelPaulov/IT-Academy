@@ -5,9 +5,9 @@ export default class Card extends HTMLElement {
     }
 
     onClick(evt) {
-        if (evt.target.closest('.btn')) {
+        if(evt.target.closest('.btn')) {
             const event = new CustomEvent('share-data', { bubbles: true, detail: this.data });
-            this.dispatchEvent(event)
+            this.dispatchEvent(event);
         }
     }
 
@@ -22,12 +22,12 @@ export default class Card extends HTMLElement {
             <img src="${this.data.preview}" class="card-img-top" alt="${this.data.title}">
             <div class="card-body">
                 <h5 class="card-title">${this.data.title}</h5>
-                <p class="card-text">${this.data.description}</p>
+                <p class="card-text">${this.data.descripion}</p>
                 <p><strong>${this.data.price}$</strong></p>
                 <button href="#" class="btn btn-primary">Add to cart</button>
             </div>
             </div>
-      `;
+        `;
     }
 }
 
