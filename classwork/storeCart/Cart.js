@@ -1,3 +1,6 @@
+import { STORAGE_KEYS } from "./constants/storage.js";
+import storageService from "./services/StorageService.js";
+
 export default class Cart extends HTMLElement {
     constructor() {
         super();
@@ -6,12 +9,31 @@ export default class Cart extends HTMLElement {
         this.data = [];
     }
 
+    cartDataAdapter(data) {
+        return data
+        .map((item, _, arr) => {
+            return {
+                ...item,
+                quantity: arr.filter((subItem) => subItem.id === item.id).length,
+            }
+        })
+        .filter(
+            (item, index, arr) =>
+            arr.findIndex((findItem) => findItem.id === item.id) === index
+        );
+    }
+
+    initializeData() {
+        const data = storageService.getItem(STORAGE_KEYS.cartData);
+        this.data = data ? this.cartDataAdapter(data) : [];
+        this.quantity = data?.length ?? 0;
+    }
+
     onToggleTable(evt) {
         if (evt.target.closest('.cart-link-icon')) {
             evt.preventDefault();
             this.isVisible = !this.isVisible;
             this.render();
-            console.log('click');
         }
     }
 
@@ -30,17 +52,18 @@ export default class Cart extends HTMLElement {
     }
     
     watchOnData() {
-        window.addEventListener('share-data', (evt) => {
-            this.data.push(evt.detail);
+        window.addEventListener('storage', (evt) => {
+            this.data = this.cartDataAdapter(evt.detail.value);
             this.quantity = this.quantity + 1;
             this.render();
         })
     }
 
     connectedCallback() {
-        this.render();
+        this.initializeData();
         this.addEventListener('click', this.onClick);
         this.watchOnData();
+        this.render();
     }
 
     disconnectedCallback() {
@@ -85,7 +108,7 @@ export default class Cart extends HTMLElement {
                                         </td>
                                     </tr>
                                     `
-                            })
+                            }).join(' ')
                         }
                     ` : `
                         <tr>
