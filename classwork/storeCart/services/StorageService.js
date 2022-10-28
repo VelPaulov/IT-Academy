@@ -21,14 +21,7 @@ class StorageService {
 
     setItem(key, value) {
         try {
-            const existedValue = this.getItem(key);
-            if (existedValue) {
-                if (Array.isArray(existedValue)) {
-                    this.storage.setItem(key, JSON.stringify([...existedValue, ...value]));
-                }
-            } else {
-                this.storage.setItem(key, JSON.stringify(value));
-            }
+            this.storage.setItem(key, JSON.stringify(value));
             this.dispatchEvent(key);
         } catch (error) {
             console.error(error.message);
