@@ -366,31 +366,31 @@ import '../classwork/search/SearchList.js';
 // });
 
 
-const loadImage = (src) => {
-    return new Promise((resolve, reject) => {
-        const image = new Image();
-        image.src = src;
-        image.addEventListener('load', () => {
-            resolve(image);
-        });
-        image.addEventListener('error', () => {
-            reject(new Error('Can not load the file'));
-        });
-    });
-};
-const src = 'https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg';
+// const loadImage = (src) => {
+//     return new Promise((resolve, reject) => {
+//         const image = new Image();
+//         image.src = src;
+//         image.addEventListener('load', () => {
+//             resolve(image);
+//         });
+//         image.addEventListener('error', () => {
+//             reject(new Error('Can not load the file'));
+//         });
+//     });
+// };
+// const src = 'https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg';
 
-loadImage(src)
-    .then((image) => console.log(image))
-    .catch();
+// loadImage(src)
+//     .then((image) => console.log(image))
+//     .catch();
 
-const load = async () => {
-    try {
-        const data = await loadImage(src);
-    console.log(data);
-    } catch (error) {
-        console.error(error);
-    }
-}
+// const load = async () => {
+//     try {
+//         const data = await loadImage(src);
+//     console.log(data);
+//     } catch (error) {
+//         console.error(error);
+//     }
+// }
 
-load();
+// load();
