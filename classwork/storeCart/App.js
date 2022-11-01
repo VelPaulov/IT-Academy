@@ -4,48 +4,18 @@ import './Cart.js';
 class App extends HTMLElement {
     constructor() {
         super();
-        this.data = [
-            {
-                id: 1,
-                title: 'Product #1',
-                preview: './images/01.jpg',
-                description: 
-                    'В Xiaomi 11T есть все для Вашего комфорта: это и профессиональная камера на 108 Мп, AMOLED дисплей с частотой обновления 120 Гц, супермощный процессор и турбо-зарядка на 67W.',
-                price: 200,
-                quantity: 0,
-            },
-            {
-                id: 2,
-                title: 'Product #2',
-                preview: './images/02.jpg',
-                description: 
-                    'В Xiaomi 11T есть все для Вашего комфорта: это и профессиональная камера на 108 Мп, AMOLED дисплей с частотой обновления 120 Гц, супермощный процессор и турбо-зарядка на 67W.',
-                price: 210,
-                quantity: 0,
-            },
-            {
-                id: 3,
-                title: 'Product #3',
-                preview: './images/03.jpg',
-                description: 
-                    'В Xiaomi 11T есть все для Вашего комфорта: это и профессиональная камера на 108 Мп, AMOLED дисплей с частотой обновления 120 Гц, супермощный процессор и турбо-зарядка на 67W.',
-                price: 230,
-                quantity: 0,
-            },
-            {
-                id: 4,
-                title: 'Product #4',
-                preview: './images/04.jpg',
-                description: 
-                    'В Xiaomi 11T есть все для Вашего комфорта: это и профессиональная камера на 108 Мп, AMOLED дисплей с частотой обновления 120 Гц, супермощный процессор и турбо-зарядка на 67W.',
-                price: 240,
-                quantity: 0,
-            },
-        ];
+        this.data = [];
     }
 
     connectedCallback() {
         this.render();
+      //  https://fakestoreapi.com/docs
+        fetch('https://fakestoreapi.com/products')
+            .then((res) => res.json())
+            .then((result) => {
+                this.data = result;
+                this.render();
+            });
     }
 
     

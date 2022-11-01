@@ -326,3 +326,71 @@ import '../classwork/search/SearchList.js';
 
 // customElements.define('user-search', Search);
 
+// SetTimeout: (повторяется один раз через заданное время)
+// setTimeout(() => {
+//     console.log('hello');
+// }, 2000);
+
+// SetInterval: (повторяется постоянно через заданное время)
+// setInterval(() => {
+//     console.log('Hello');
+// }, 2000);
+
+
+// document.getElementById('app').innerHTML = `
+//     <div class='box'><div>
+// `;
+
+// const box = document.querySelector('.box');
+// const animateElement = (element, duration, distance) => {
+//     const frame = (duration / 1000) * 60;
+//     const delta = distance / frame;
+
+//     let currentX = element.getBoundinClientReact().x;
+//     const maxX = currentX + distance;
+
+//     const step = () => {
+//         currentX += delta;
+//         element.style.transform = `translateX(${currentX}px)`;
+//         if(currentX < maxX) {
+//             requestAnimationFrame(step);
+//         }
+
+//     };
+
+//     requestAnimationFrame(step);
+// };
+
+// box.addEventListener('click', () => {
+//     animateElement(box, 1000, 200);
+// });
+
+
+const loadImage = (src) => {
+    return new Promise((resolve, reject) => {
+        const image = new Image();
+        image.src = src;
+        image.addEventListener('load', () => {
+            resolve(image);
+        });
+        image.addEventListener('error', () => {
+            reject(new Error('Can not load the file'));
+        });
+    });
+};
+const src = 'https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg';
+
+loadImage(src)
+    .then((image) => console.log(image))
+    .catch();
+
+const load = async () => {
+    try {
+        const data = await loadImage(src);
+    console.log(data);
+    } catch (error) {
+        console.error(error);
+    }
+}
+
+load();
