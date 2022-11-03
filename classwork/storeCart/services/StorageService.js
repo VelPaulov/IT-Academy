@@ -39,4 +39,5 @@ class StorageService {
     }
 }
 
-export default new StorageService();
+const storageService = new StorageService();
+export default storageService;
