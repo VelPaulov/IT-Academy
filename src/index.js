@@ -42,8 +42,13 @@ const src = "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg
 
 // Promise with async/await:
 const load = async () => {
-    const data = await loadImage(src);
+    try {
+        const data = await loadImage(src);
     console.log(data);
+    } catch (err) {
+        console.error(err);
+    }
+    
 }
 
 load();
