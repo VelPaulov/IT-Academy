@@ -32,7 +32,7 @@ export class Menu extends Component {
                 <div class="list-group">
                     ${items.map(item => {
                         return `<a href="${item.href}" class="list-group-item list-group-item-action">${item.label}</a>`
-                    })}
+                    }).join(' ')}
                 </div>
             </div>
         `
