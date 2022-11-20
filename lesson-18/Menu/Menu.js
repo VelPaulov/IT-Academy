@@ -1,4 +1,5 @@
 import { Component } from "../Component/Component.js";
+import './menu.scss';
 
 export class Menu extends Component {
     constructor() {
