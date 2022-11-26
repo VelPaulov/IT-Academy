@@ -1,0 +1,36 @@
+.menu {
+    left: -300px;
+}
+
+.open {
+    animation-name: openmenu;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+.closed {
+    animation-name: closemenu;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+
+}
+
+@keyframes openmenu {
+    0% {
+        left: -300px;
+    }
+
+    100% {
+        left: 0;
+    }
+}
+
+@keyframes closemenu {
+    0% {
+        left: 0;
+    }
+
+    100% {
+        left: -320px;
+    }
+}
